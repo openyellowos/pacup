@@ -2,8 +2,8 @@
 ***Simplify package updates***
 
 ## :fountain_pen:Contributors
-**PengiNN**:  
-<a href="https://github.com/PengiNN"><img src="https://avatars.githubusercontent.com/u/103301288?v=4" alt="PengiNN Profile Image" title="PengiNN" width=150></a>
+**PenN**:  
+<a href="https://github.com/PengiNN"><img src="https://avatars.githubusercontent.com/u/103301288?v=4" alt="PenN Profile Image" title="PenN" width=150></a>
 - Made a template for [**pacup**](https://github.com/PengiNN/pacup "PengiNN/pacup")
 
 **桜咲ヒロ**:  
