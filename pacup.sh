@@ -16,18 +16,18 @@ while (($#>0)); do
   case $1 in
     a|-a|--apt)
       PACUP_MOD="apt"
-      ;;
+    ;;
     y|-y|--yes)
       PACUP_YES=" -y"
-      ;;
+    ;;
     h|-h|--help)
       usage
       exit 0
-      ;;
+    ;;
     *)
       usage
       exit 1
-      ;;
+    ;;
   esac
   # $1が無くなるまで繰り返す
   shift
