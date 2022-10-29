@@ -24,29 +24,17 @@ jobs:
       - if: ${{ github.event.inputs.fpk == 'true' }}
         name: Set up Flatpak
         run: sudo apt install -y flatpak
-      - name: Set up pacup
-        run: ./install_pacup.sh
-      - name: Show copied pacup script
-        run: cat /usr/local/bin/pacup
       - name: Running test
-        run: pacup -y
+        run: |
+          sudo cp -f ./pacup.sh /usr/local/bin/pacup
+          pacup -y
       - if: ${{ github.event.inputs.fpk == 'true' }}
         name: Uninstall Flatpak
         run: sudo apt-get remove -y --purge flatpak
-      - if: ${{ github.event.inputs.fpk == 'true' }}
-        name: Reset up pacup (Remove Flatpak)
-        run: ./install_pacup.sh
-      - if: ${{ github.event.inputs.fpk == 'true' }}
-        name: Show copied pacup script (Remove Flatpak)
-        run: cat /usr/local/bin/pacup
       - if: ${{ github.event.inputs.fpk == 'true' }}
         name: Running test (Remove Flatpak)
         run: pacup -y
       - name: Uninstall Snapd
         run: sudo apt-get remove -y --purge snapd
-      - name: Reset up pacup (Remove Snapd)
-        run: ./install_pacup.sh
-      - name: Show copied pacup script (Remove Snapd)
-        run: cat /usr/local/bin/pacup
       - name: Running test (Remove Snapd)
         run: pacup -y
