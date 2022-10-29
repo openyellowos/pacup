@@ -2,10 +2,13 @@
 
 function usage() {
   cat <<EOM
-使用方法: $(basename $0) [オプション]...
+
+使用方法: $(basename $0) [オプション1] [オプション2]...
+
     -a          APTのみ実行
     -y		'y'の入力をスキップします
     -h          ヘルプを表示します
+
 EOM
 }
 
@@ -30,11 +33,11 @@ while (($#>0)); do
 done
 
 function PACUP_APT() {
-  echo -e "\napt-get update を実行します"
+  echo -e "\nsudo apt-get update を実行します"
   sudo apt-get update
-  echo -e "\napt-get full-upgrade$PACUP_YES を実行します"
+  echo -e "\nsudo apt-get full-upgrade$PACUP_YES を実行します"
   sudo apt-get full-upgrade$PACUP_YES
-  echo -e "\napt-get autoremove$PACUP_YES を実行します"
+  echo -e "\nsudo apt-get autoremove$PACUP_YES を実行します"
   sudo apt-get autoremove$PACUP_YES
 }
 
