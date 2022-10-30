@@ -21,13 +21,15 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
+      - name: Set up and Show help
+        run: |
+          sudo cp -f ./pacup /usr/local/bin/
+          pacup -h
       - if: ${{ github.event.inputs.fpk == 'true' }}
         name: Set up Flatpak
         run: sudo apt install -y flatpak
       - name: Running test
-        run: |
-          sudo cp -f ./pacup /usr/local/bin/
-          pacup -y
+        run: pacup -y
       - if: ${{ github.event.inputs.fpk == 'true' }}
         name: Uninstall Flatpak
         run: sudo apt-get remove -y --purge flatpak
