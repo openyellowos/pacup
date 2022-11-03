@@ -27,7 +27,7 @@ jobs:
           pacup -h
       - if: ${{ github.event.inputs.fpk == 'true' }}
         name: Set up Flatpak
-        run: sudo apt install -y flatpak
+        run: sudo apt-get install -y flatpak
       - name: Running test
         run: pacup -y
       - if: ${{ github.event.inputs.fpk == 'true' }}
