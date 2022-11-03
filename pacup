@@ -16,18 +16,18 @@ while (($#>0)); do
   case $1 in
     a|-a|--apt)
       PACUP_MOD="apt"
-    ;;
+      ;;
     y|-y|--yes)
       PACUP_YES=" -y"
-    ;;
+      ;;
     h|-h|--help)
       usage
       exit 0
-    ;;
+      ;;
     *)
       usage
       exit 1
-    ;;
+      ;;
   esac
   shift
 done
@@ -77,7 +77,7 @@ if [ $? != 0 ]; then
 fi
 
 PACUP_APT
-if [ -f /usr/bin/flatpak ]; then
+if [ $(command -v flatpak) ]; then
   echo -e "\nflatpak update$PACUP_YES を実行します"
   flatpak update$PACUP_YES
 fi
