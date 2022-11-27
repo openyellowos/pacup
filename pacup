@@ -37,8 +37,8 @@ function PACUP_APT() {
   sudo apt-get update
   echo -e "\nsudo apt-get full-upgrade$PACUP_YES を実行します"
   sudo apt-get full-upgrade$PACUP_YES
-  echo -e "\nsudo apt-get autoremove$PACUP_YES を実行します"
-  sudo apt-get autoremove$PACUP_YES
+  echo -e "\nsudo apt-get autoremove$PACUP_YES --fix-broken を実行します"
+  sudo apt-get autoremove$PACUP_YES --fix-broken
 }
 
 function PACUP_SYS() {
